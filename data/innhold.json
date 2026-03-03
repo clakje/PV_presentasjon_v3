@@ -8,12 +8,11 @@
             "innhold_html": "<div class=\"layout-20-60-20\"><div class=\"kolonne venstre\"><h1>Den pedagogiske veilederen</h1></div><div class=\"kolonne midten\"><div class=\"diamant-container\"><img src=\"assets/images/Diamanten.gif\" alt=\"Diamanten\"></div></div><div class=\"kolonne hoyre\"><img src=\"assets/images/logo-akershus-universitetssykehus---cmyk.png\" alt=\"Ahus logo\" class=\"logo-stor\"></div></div>"
         },
         {
-            "id": "hva-er-det",
+            "id": "presentatorer",
             "bakgrunnsfarge": "#f4f4f4",
             "grafikk_url": "",
-            "grafikk_posisjon": "hoyre",
             "tekst_tema": "lys",
-            "innhold_html": "<h2>Hva er dette?</h2><p>Dette verktøyet er utviklet for ressurssykepleiere. Det gir en praktisk, trinnvis guide til å planlegge og gjennomføre opplæring på egen avdeling.</p>"
+            "innhold_html": "<div class=\"layout-presentatorer\"><div class=\"presentator venstre\"><div class=\"bilde-container\"><img src=\"assets/images/Claes.jpg\" alt=\"Claes Kjelshus\"></div><div class=\"tekst-container\"><h2>Claes Kjelshus</h2><p>Regionalt senter for digital læring og kompetanseheving (RegDig), HSØ<br><a href=\"mailto:clakje@ahus.no\">clakje@ahus.no</a></p></div></div><div class=\"strek-container\"><div class=\"animert-strek\"></div></div><div class=\"presentator hoyre\"><div class=\"bilde-container\"><img src=\"assets/images/Benedicte.jpg\" alt=\"Benedicte Lynum\"></div><div class=\"tekst-container\"><h2>Benedicte Lynum</h2><p>Digital læring, Ahus<br><a href=\"mailto:belynu@ahus.no\">belynu@ahus.no</a></p></div></div></div>"
         },
         {
             "id": "viktigheten",

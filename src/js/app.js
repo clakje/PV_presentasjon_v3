@@ -62,8 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     oppdaterLagUnder(data);
                 } else {
-                    // Elementet har forlatt skjermen (valgfritt: fjerne animasjonsklassen for å trigge dem på nytt)
-                    // entry.target.classList.remove('is-visible'); 
+                    // Elementet har forlatt skjermen. Fjerner klassen slik at animasjonen reverseres (f.eks når man scroller opp igjen).
+                    entry.target.classList.remove('is-visible');
                 }
             });
         }, observerOptions);
