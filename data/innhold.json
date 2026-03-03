@@ -1,0 +1,43 @@
+{
+    "slides": [
+        {
+            "id": "intro",
+            "bakgrunnsfarge": "#ffffff",
+            "grafikk_url": "",
+            "tekst_tema": "mork",
+            "innhold_html": "<div class=\"layout-20-60-20\"><div class=\"kolonne venstre\"><h1>Den pedagogiske veilederen</h1></div><div class=\"kolonne midten\"><div class=\"diamant-container\"><img src=\"assets/images/Diamanten.gif\" alt=\"Diamanten\"></div></div><div class=\"kolonne hoyre\"><img src=\"assets/images/logo-akershus-universitetssykehus---cmyk.png\" alt=\"Ahus logo\" class=\"logo-stor\"></div></div>"
+        },
+        {
+            "id": "hva-er-det",
+            "bakgrunnsfarge": "#f4f4f4",
+            "grafikk_url": "",
+            "grafikk_posisjon": "hoyre",
+            "tekst_tema": "lys",
+            "innhold_html": "<h2>Hva er dette?</h2><p>Dette verktøyet er utviklet for ressurssykepleiere. Det gir en praktisk, trinnvis guide til å planlegge og gjennomføre opplæring på egen avdeling.</p>"
+        },
+        {
+            "id": "viktigheten",
+            "bakgrunnsfarge": "#6CACE4",
+            "grafikk_url": "",
+            "grafikk_posisjon": "venstre",
+            "tekst_tema": "lys",
+            "innhold_html": "<h2>Lys Blå Seksjon</h2><p>Her utnytter vi nasjonalt profilprogram. Den lyseblå fargen (<code>#6CACE4</code>) gir kontrast, men fungerer bra med mørk tekst på hvit blokk for lesbarhet.</p>"
+        },
+        {
+            "id": "fordypning",
+            "bakgrunnsfarge": "#003087",
+            "grafikk_url": "",
+            "grafikk_posisjon": "center",
+            "tekst_tema": "mork",
+            "innhold_html": "<h2>Mørk Blå Seksjon</h2><p>Ved å skifte bakgrunnen til <code>#003087</code> skaper vi en dramatisk effekt. Tekstboksen i dette laget tilpasser seg, og vi kan hente inn grafikk i bakgrunnen senere.</p>"
+        },
+        {
+            "id": "avslutning",
+            "bakgrunnsfarge": "#ffffff",
+            "grafikk_url": "",
+            "grafikk_posisjon": "center",
+            "tekst_tema": "lys",
+            "innhold_html": "<h2>Neste steg</h2><p>Du er nå ferdig med introduksjonen. Nå kan du erstatte denne teksten med ekte faginnhold slide for slide, og putte inn bilder i <code>assets/images/</code> som du refererer til i JSON-filen.</p>"
+        }
+    ]
+}

@@ -1,0 +1,230 @@
+/* style.css - Hovedstilark for prosjektet */
+:root {
+    --hso-mork-bla: #003087;
+    --hso-lys-bla: #6CACE4;
+    --hso-hvit: #ffffff;
+    --tekst-mork: #333333;
+    --tekst-lys: #ffffff;
+    --body-font: Calibri, sans-serif;
+    --transition-speed: 0.8s;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--body-font);
+    background-color: var(--hso-hvit);
+    overflow-x: hidden;
+    /* Forhindre horisontal rulling */
+    color: var(--tekst-mork);
+}
+
+/* Fremdriftsindikator */
+#progress-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-color: transparent;
+    z-index: 1000;
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: var(--hso-lys-bla);
+    transition: width 0.1s ease-out;
+}
+
+/* 3-lags struktur for scrollytelling */
+
+/* Lag 1: Fastslått bakgrunnsfarge som endrer seg */
+#layer-1-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    background-color: var(--hso-hvit);
+    transition: background-color var(--transition-speed) ease;
+}
+
+/* Lag 2: Fikstert lag for grafikk som oppdateres via JS */
+#layer-2-graphics {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+    pointer-events: none;
+    /* Lar brukeren klikke gjennom til ev. linker i tekst */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    box-sizing: border-box;
+    opacity: 1;
+    transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+#layer-2-graphics img {
+    max-width: 50vw;
+    max-height: 80vh;
+    object-fit: contain;
+    /* Basic fade-in/out for grafikk bytte styres av JS */
+    transition: opacity 0.5s ease;
+}
+
+/* Lag 3: Scrollbart innhold */
+#layer-3-content {
+    position: relative;
+    z-index: 3;
+    /* Viktig at innholdet scroller som normalt */
+}
+
+/* Stiler for hver enkelt "seksjon/slide" i Layer 3 */
+.slide {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    box-sizing: border-box;
+    /* Glidende overgang for tekstfarge hvis bakgrunnen blir mørk */
+    transition: color var(--transition-speed) ease;
+    width: 100%;
+}
+
+.slide-content {
+    width: 100%;
+    /* Halv-transparent bakgrunn på tekst for lesbarhet - fjernes for layout-sidene */
+    padding: 20px;
+    border-radius: 8px;
+    /* For at teksten skal dukke opp pent. Class 'is-visible' toggles av Intersection Observer */
+    opacity: 0.2;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Original styling fra tidligere slides */
+.slide:not(#intro) .slide-content {
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+/* Fjerner bakgrunn på teksten hvis designet tillater det, 
+   men mørkeblå på hvit/lysblå er ofte nødvendig for HSØ */
+.slide.dark-mode:not(#intro) .slide-content {
+    background: rgba(0, 48, 135, 0.9);
+    /* Mørk blå boks */
+    color: var(--tekst-lys);
+}
+
+.slide.dark-mode {
+    color: var(--tekst-lys);
+}
+
+
+.slide.is-visible .slide-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 0;
+    color: inherit;
+}
+
+/* --- Spesifikke layouter: 20/60/20 --- */
+.layout-20-60-20 {
+    display: flex;
+    width: 100%;
+    max-width: 1500px;
+    /* narrowed slightly to keep things close */
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    /* Center the columns as a unit */
+    gap: 4vw;
+    /* Equal gap between mid and outer columns */
+}
+
+.layout-20-60-20 .kolonne.venstre {
+    width: 35%;
+    display: flex;
+    justify-content: flex-end;
+    /* Push text towards the center gif */
+    padding-right: 0;
+    /* Let gap handle spacing */
+    padding-left: 0;
+}
+
+.layout-20-60-20 .kolonne.venstre h1 {
+    text-align: left;
+    /* Keep text itself left aligned */
+    margin: 0;
+    max-width: 450px;
+    /* Keep text lines broken nicely */
+}
+
+.layout-20-60-20 .kolonne.midten {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.layout-20-60-20 .kolonne.hoyre {
+    width: 35%;
+    display: flex;
+    justify-content: flex-start;
+    /* Push logo towards the center gif */
+    padding-left: 0;
+    /* Let gap handle spacing */
+    padding-right: 0;
+}
+
+.layout-20-60-20 .kolonne.hoyre img {
+    max-width: 100%;
+    height: auto;
+}
+
+.layout-20-60-20 h1 {
+    font-size: 3.8rem;
+    line-height: 1.1;
+    color: var(--hso-mork-bla);
+}
+
+/* --- Logo-styling --- */
+.logo-stor {
+    max-width: 110% !important;
+    /* Made fraction smaller so it fits well into the tightened space */
+    width: 110%;
+    display: block;
+    transform: none;
+    /* Remove any translation offset */
+    margin: 0;
+}
+
+/* --- Diamant-container og animasjon over bilde --- */
+.diamant-container {
+    position: relative;
+    max-width: 80%;
+    /* Skalerer diamanten passe stort i midt-kolonnen */
+    display: inline-block;
+}
+
+.diamant-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+    /* Sørg for at bildet ligger under animasjonen */
+}

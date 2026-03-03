@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helse Sør-Øst: Pedagogisk Veileder</title>
+    <link rel="stylesheet" href="src/css/style.css">
+</head>
+
+<body>
+    <!-- Fremdriftsindikator på toppen -->
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <!-- Hovedstrukturen for scrollytelling -->
+    <main id="app">
+        <!-- Lag 1: Bakgrunn (ensfarget, animeres mellom farger) -->
+        <div id="layer-1-background" class="layer"></div>
+
+        <!-- Lag 2: Grafikk (bilder/illustrasjoner som glir inn) -->
+        <div id="layer-2-graphics" class="layer"></div>
+
+        <!-- Lag 3: Innhold (teksten du leser, og som definerer rullelengden) -->
+        <div id="layer-3-content" class="layer-scrollable"></div>
+    </main>
+
+    <script src="src/js/app.js"></script>
+</body>
+
+</html>
