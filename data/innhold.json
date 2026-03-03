@@ -15,12 +15,12 @@
             "innhold_html": "<div class=\"layout-presentatorer\"><div class=\"presentator venstre\"><div class=\"bilde-container\"><img src=\"assets/images/Claes.jpg\" alt=\"Claes Kjelshus\"></div><div class=\"tekst-container\"><h2>Claes Kjelshus</h2><p>Regionalt senter for digital læring og kompetanseheving (RegDig), HSØ<br><a href=\"mailto:clakje@ahus.no\">clakje@ahus.no</a></p></div></div><div class=\"strek-container\"><div class=\"animert-strek\"></div></div><div class=\"presentator hoyre\"><div class=\"bilde-container\"><img src=\"assets/images/Benedicte.jpg\" alt=\"Benedicte Lynum\"></div><div class=\"tekst-container\"><h2>Benedicte Lynum</h2><p>Digital læring, Ahus<br><a href=\"mailto:belynu@ahus.no\">belynu@ahus.no</a></p></div></div></div>"
         },
         {
-            "id": "viktigheten",
-            "bakgrunnsfarge": "#6CACE4",
+            "id": "kompetanse",
+            "bakgrunnsfarge": "#003087",
             "grafikk_url": "",
-            "grafikk_posisjon": "venstre",
-            "tekst_tema": "lys",
-            "innhold_html": "<h2>Lys Blå Seksjon</h2><p>Her utnytter vi nasjonalt profilprogram. Den lyseblå fargen (<code>#6CACE4</code>) gir kontrast, men fungerer bra med mørk tekst på hvit blokk for lesbarhet.</p>"
+            "grafikk_posisjon": "",
+            "tekst_tema": "mork",
+            "innhold_html": "<div class=\"strek-overgang\"></div><div class=\"layout-sitat\"><div class=\"sitat-dekor-linje\"></div><blockquote class=\"sitat-tekst\">«Den største risikoen er ikke at vi investerer for mye i kompetanse – men at vi investerer for lite.»</blockquote><p class=\"sitat-kilde\">— Kompetanseheving i helsesektoren</p><div class=\"sitat-dekor-linje\"></div></div>"
         },
         {
             "id": "fordypning",

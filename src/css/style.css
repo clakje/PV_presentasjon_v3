@@ -341,3 +341,102 @@ h3 {
     box-shadow: none !important;
     max-width: none !important;
 }
+
+/* --- Side 3: Kompetanse (helblå side med expanding strek) --- */
+
+/* Override default slide-content background for this slide */
+#kompetanse .slide-content {
+    background: transparent !important;
+    box-shadow: none !important;
+    max-width: none !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+#kompetanse {
+    position: relative;
+    overflow: visible;
+}
+
+/* The expanding line – visual bridge from slide 2's vertical line */
+.strek-overgang {
+    position: absolute;
+    top: -30vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    /* Matches slide 2 line width */
+    height: calc(30vh + 100%);
+    /* Extends up into slide 2 and covers full slide 3 */
+    background-color: var(--hso-mork-bla);
+    z-index: 0;
+    transition: width 1.8s cubic-bezier(0.4, 0, 0.2, 1),
+        border-radius 1.8s ease;
+}
+
+/* When slide 3 is visible, expand the line to fill the entire viewport */
+.slide.is-visible .strek-overgang {
+    width: 100vw;
+    border-radius: 0;
+}
+
+/* --- Sitat-layout (motiverende sitat, sentrert) --- */
+.layout-sitat {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out 0.8s,
+        transform 1s ease-out 0.8s;
+    /* Delayed so the line expands first */
+}
+
+.slide.is-visible .layout-sitat {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Decorative thin white lines above/below the quote */
+.sitat-dekor-linje {
+    width: 80px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 20px auto;
+}
+
+/* The quote text */
+.sitat-tekst {
+    font-size: 2.2rem;
+    font-style: italic;
+    font-family: Calibri, sans-serif;
+    color: var(--tekst-lys);
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    border: none;
+    /* Remove default blockquote styling */
+    font-weight: 300;
+    letter-spacing: 0.02em;
+}
+
+/* Quote attribution */
+.sitat-kilde {
+    font-size: 1.1rem;
+    font-family: Calibri, sans-serif;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 25px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
