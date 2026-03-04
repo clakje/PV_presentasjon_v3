@@ -121,10 +121,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!kompetanseSlide || !fordypningSlide) return;
 
-        const spinner = fordypningSlide.querySelector('.strek-spinner');
-        if (!spinner) return;
-
         window.addEventListener('scroll', () => {
+            const spinner = document.getElementById('the-spinner');
+            if (!spinner) return;
+
             const rect = kompetanseSlide.getBoundingClientRect();
             const slideHeight = rect.height;
             const viewportHeight = window.innerHeight;
@@ -138,10 +138,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const fordypningRect = fordypningSlide.getBoundingClientRect();
             const fordypningVisible = fordypningRect.top < viewportHeight * 0.5;
 
-            if (progress > 0.4 && !fordypningVisible) {
+            if (fordypningVisible) {
+                spinner.classList.remove('is-spinning');
+                spinner.classList.add('extend-down');
+            } else if (progress > 0.4) {
+                spinner.classList.remove('extend-down');
                 spinner.classList.add('is-spinning');
             } else {
-                spinner.classList.remove('is-spinning');
+                spinner.classList.remove('is-spinning', 'extend-down');
             }
         });
     }
