@@ -440,3 +440,196 @@ h3 {
     letter-spacing: 0.1em;
     text-transform: uppercase;
 }
+
+/* ============================================================
+   Side 4: Pedagogikk vs Andragogikk – spinnende strek + split
+   ============================================================ */
+
+/* Override default slide-content background for this slide */
+#fordypning .slide-content {
+    background: transparent !important;
+    box-shadow: none !important;
+    max-width: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0;
+}
+
+#fordypning {
+    overflow: visible;
+    position: relative;
+}
+
+/* --- The main layout container --- */
+.layout-ped-vs-and {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 40px 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+/* --- Spinning divider line --- */
+.strek-spinner {
+    position: absolute;
+    top: -30vh;
+    left: 50%;
+    width: 4px;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    transform: translateX(-50%);
+    z-index: 2;
+    transition: height 1.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: top center;
+}
+
+/* Phase 1: when the kompetanse section is halfway scrolled, spin begins */
+@keyframes strek-spin {
+    0% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translateX(-50%) rotate(360deg);
+    }
+}
+
+.strek-spinner.is-spinning {
+    height: 80px;
+    animation: strek-spin 1.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Phase 2: when slide 4 is visible, line stops spinning & extends full height */
+.slide.is-visible .strek-spinner {
+    height: calc(100% + 30vh);
+    animation: none;
+    transform: translateX(-50%) rotate(0deg);
+    transition: height 1.6s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.6s ease;
+}
+
+/* --- Header row (Pedagogikk / Andragogikk labels) --- */
+.pva-header {
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out 0.4s,
+        transform 0.8s ease-out 0.4s;
+}
+
+.slide.is-visible .pva-header {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pva-header h2 {
+    font-size: 2.6rem;
+    font-family: Calibri, sans-serif;
+    color: var(--tekst-lys);
+    margin: 0;
+    letter-spacing: 0.02em;
+}
+
+.pva-subtittel {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 4px 0 0 0;
+    font-style: italic;
+    letter-spacing: 0.05em;
+}
+
+.pva-dimensjon-header {
+    width: 120px;
+    flex-shrink: 0;
+}
+
+/* --- Each dimension row --- */
+.pva-rad {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    /* Staggered fade-in */
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease-out,
+        transform 0.7s ease-out;
+    transition-delay: calc(0.6s + var(--rad-index, 0) * 0.15s);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 0;
+}
+
+.slide.is-visible .pva-rad {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Left / Right panels --- */
+.pva-side {
+    flex: 1;
+    padding: 10px 25px;
+    color: var(--tekst-lys);
+}
+
+.pva-side.venstre {
+    text-align: right;
+    padding-right: 40px;
+}
+
+.pva-side.hoyre {
+    text-align: left;
+    padding-left: 40px;
+}
+
+.pva-side h3 {
+    font-size: 1.3rem;
+    font-family: Calibri, sans-serif;
+    color: var(--hso-lys-bla);
+    margin: 0 0 6px 0;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.pva-side p {
+    font-size: 1.05rem;
+    font-family: Calibri, sans-serif;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0;
+}
+
+/* --- Center dimension badge --- */
+.pva-dimensjon {
+    width: 120px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.85rem;
+    font-family: Calibri, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--hso-mork-bla);
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 8px 12px;
+    align-self: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 3;
+}

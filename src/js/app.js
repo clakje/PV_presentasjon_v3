@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             slideData = data.slides;
             byggDOM(slideData);
             initScrollObserving();
+            initSpinnerScroll();
         })
         .catch(error => console.error('Feil ved lasting av innhold:', error));
 
@@ -112,4 +113,36 @@ document.addEventListener('DOMContentLoaded', () => {
         const scrolled = (scrollTop / (scrollHeight - clientHeight)) * 100;
         progressBar.style.width = scrolled + '%';
     });
+
+    // 6. Scroll-basert spinning-logikk for strek-overgang fra side 3 til 4
+    function initSpinnerScroll() {
+        const kompetanseSlide = document.getElementById('kompetanse');
+        const fordypningSlide = document.getElementById('fordypning');
+
+        if (!kompetanseSlide || !fordypningSlide) return;
+
+        const spinner = fordypningSlide.querySelector('.strek-spinner');
+        if (!spinner) return;
+
+        window.addEventListener('scroll', () => {
+            const rect = kompetanseSlide.getBoundingClientRect();
+            const slideHeight = rect.height;
+            const viewportHeight = window.innerHeight;
+
+            // Beregn hvor langt gjennom slide 3 brukeren har scrollet
+            // rect.top er negativ når brukeren har scrollet forbi toppen av sliden
+            const scrolledPast = -rect.top;
+            const progress = scrolledPast / slideHeight;
+
+            // Når brukeren er forbi 40% av slide 3 og slide 4 ikke er fullt synlig
+            const fordypningRect = fordypningSlide.getBoundingClientRect();
+            const fordypningVisible = fordypningRect.top < viewportHeight * 0.5;
+
+            if (progress > 0.4 && !fordypningVisible) {
+                spinner.classList.add('is-spinning');
+            } else {
+                spinner.classList.remove('is-spinning');
+            }
+        });
+    }
 });
