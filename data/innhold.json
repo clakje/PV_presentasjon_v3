@@ -31,6 +31,20 @@
             "innhold_html": "<div class=\"layout-ped-vs-and\"><div class=\"pva-header\"><div class=\"pva-side venstre\"><h2>Pedagogikk</h2><p class=\"pva-subtittel\">Barnet i fokus</p></div><div class=\"pva-dimensjon-header\"></div><div class=\"pva-side hoyre\"><h2>Andragogikk</h2><p class=\"pva-subtittel\">Den voksne i fokus</p></div></div><div class=\"pva-rad\" style=\"--rad-index:0\"><div class=\"pva-side venstre\"><h3>Avhengighetsforhold</h3><p>Eleven er avhengig av læreren for å vite hva, hvordan og hvorfor. Læreren har det fulle ansvaret for fremdriften.</p></div><div class=\"pva-dimensjon\">Selvbilde</div><div class=\"pva-side hoyre\"><h3>Selvstendighet</h3><p>Voksne har et sterkt behov for å være selvstyrte. De tar eierskap til egen læring og vil bli sett på som kapable beslutningstakere.</p></div></div><div class=\"pva-rad\" style=\"--rad-index:1\"><div class=\"pva-side venstre\"><h3>Begrenset erfaring</h3><p>Barn har lite livserfaring å bygge på. Læringen skjer primært gjennom lærers formidling og lærebøker.</p></div><div class=\"pva-dimensjon\">Erfaring</div><div class=\"pva-side hoyre\"><h3>Rik ressurs</h3><p>Voksne har en enorm base av erfaringer som fungerer som en læringsressurs – både for dem selv og for andre i gruppen.</p></div></div><div class=\"pva-rad\" style=\"--rad-index:2\"><div class=\"pva-side venstre\"><h3>Standardisert</h3><p>Læringsmålene er ofte låst til alder og trinn. Man lærer det samfunnet/skolen har bestemt at man «skal» kunne.</p></div><div class=\"pva-dimensjon\">Læringsvilje</div><div class=\"pva-side hoyre\"><h3>Relevansstyrt</h3><p>Voksne blir klare for å lære når de opplever et behov for å vite noe for å mestre en spesifikk livssituasjon eller arbeidsoppgave.</p></div></div><div class=\"pva-rad\" style=\"--rad-index:3\"><div class=\"pva-side venstre\"><h3>Emnefokusert</h3><p>Undervisningen er strukturert rundt fag (f.eks. historie eller matte). Kunnskapen lagres for bruk i en ubestemt fremtid.</p></div><div class=\"pva-dimensjon\">Orientering</div><div class=\"pva-side hoyre\"><h3>Problemfokusert</h3><p>Voksne lærer best når kunnskapen kan brukes umiddelbart på virkelige utfordringer. De søker løsninger fremfor teoretiske konsepter.</p></div></div><div class=\"pva-rad\" style=\"--rad-index:4\"><div class=\"pva-side venstre\"><h3>Ytre faktorer</h3><p>Motivasjonen drives ofte av karakterer, press fra foreldre, lærers godkjennelse eller unngåelse av konsekvenser.</p></div><div class=\"pva-dimensjon\">Motivasjon</div><div class=\"pva-side hoyre\"><h3>Indre drivkraft</h3><p>Selv om ytre faktorer (lønn/tittel) betyr noe, er de sterkeste driverne selvfølelse, livskvalitet og gleden ved mestring.</p></div></div></div>"
         },
         {
+            "id": "bruksanvisning",
+            "bakgrunnsfarge": "#ffffff",
+            "grafikk_url": "",
+            "tekst_tema": "lys",
+            "innhold_html": "<div class=\"strek-overgang-hvit\"></div><div class=\"layout-bruksanvisning\"><h2 class=\"anim-tekst\">Det kan lønne seg å lese bruksanvisningen først</h2><div class=\"anim-bilde\"><img src=\"assets/images/kjøkken.png\" alt=\"Kjøkken uten bruksanvisning\"></div></div>"
+        },
+        {
+            "id": "hjemmesiden",
+            "bakgrunnsfarge": "#ffffff",
+            "grafikk_url": "",
+            "tekst_tema": "lys",
+            "innhold_html": "<div class=\"layout-hjemmesiden\"><div class=\"hjemmeside-venstre\"><img src=\"assets/images/hjemmeside.png\" alt=\"Den pedagogiske veilederen\" class=\"fade-in-bilde\"></div><div class=\"hjemmeside-hoyre\"><h2 class=\"fade-in-tekst\">Her finner du den pedagogiske veilederen:</h2><a href=\"https://www.helse-sorost.no/helsefaglig/utdanning/pedagogisk-veileder/\" target=\"_blank\" class=\"fade-in-lenke\">https://www.helse-sorost.no/helsefaglig/utdanning/pedagogisk-veileder/</a></div></div>"
+        },
+        {
             "id": "avslutning",
             "bakgrunnsfarge": "#ffffff",
             "grafikk_url": "",

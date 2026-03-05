@@ -635,3 +635,212 @@ h3 {
     border: 6px solid var(--hso-mork-bla);
     z-index: 3;
 }
+
+/* ============================================================
+   Side 5: Bruksanvisning (Kjøkken)
+   ============================================================ */
+
+/* Fjerne standard bakgrunn/padding på slide content */
+#bruksanvisning .slide-content {
+    background: transparent !important;
+    box-shadow: none !important;
+    max-width: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0;
+    position: relative;
+    /* Sikre at children er posisjonert relativt til denne */
+}
+
+#bruksanvisning {
+    overflow: hidden;
+    /* Prevent horizontal scroll when expanding */
+    position: relative;
+}
+
+/* The expanding white line – connects visually from slide 4's spinner */
+.strek-overgang-hvit {
+    position: absolute;
+    top: -30vh;
+    /* Stretch up into previous slide */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    /* Starts slightly thicker to match spinner line width */
+    height: calc(30vh + 100%);
+    background-color: rgba(255, 255, 255, 0.4);
+    /* Starts semi-transparent like spinner */
+    z-index: 0;
+    transition: width 1.8s cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 1.8s ease;
+}
+
+/* When slide 5 is visible, expand the line to fill the entire viewport with solid white */
+.slide.is-visible .strek-overgang-hvit {
+    width: 100vw;
+    background-color: rgba(255, 255, 255, 1);
+    /* Becomes perfectly white */
+}
+
+/* Layout for text and image */
+.layout-bruksanvisning {
+    position: relative;
+    z-index: 1;
+    /* Above the expanding background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1400px;
+    /* Økt fra 1200px */
+    margin: 0 auto;
+    padding: 20px;
+    /* Redusert padding for å gi mer plass til innhold */
+    text-align: center;
+}
+
+/* Text animation setup */
+.anim-tekst {
+    font-size: 3.5rem;
+    /* Økt fra 3rem (ca 15% større men ser bedre ut proposjonalt) */
+    font-family: Calibri, sans-serif;
+    color: var(--hso-mork-bla);
+    /* Text is dark blue as it's on a white background */
+    margin: 0 0 50px 0;
+    /* Økt margin bunn litt siden tekst/bilde er større */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out 1.2s,
+        /* Delay allows background to expand mostly */
+        transform 1s ease-out 1.2s;
+}
+
+.slide.is-visible .anim-tekst {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Image animation setup */
+.anim-bilde {
+    width: 100%;
+    max-width: 1100px;
+    /* Økt fra 900px */
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease-out 1.6s,
+        /* Delayed slightly after text */
+        transform 1s ease-out 1.6s;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    /* Nice shadow */
+    border-radius: 8px;
+    /* Optional slight rounding */
+    overflow: hidden;
+}
+
+.anim-bilde img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.slide.is-visible .anim-bilde {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================================
+   Side 6: Hjemmesiden
+   ============================================================ */
+#hjemmesiden .slide-content {
+    background: transparent !important;
+    box-shadow: none !important;
+    max-width: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 0;
+    position: relative;
+}
+
+#hjemmesiden {
+    position: relative;
+    overflow: hidden;
+}
+
+.layout-hjemmesiden {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1600px;
+    /* Gjort bredere for å gi plass til et større bilde */
+    margin: 0 auto;
+    padding: 40px;
+    gap: 60px;
+}
+
+.hjemmeside-venstre {
+    flex: 1.4;
+    /* Gir bildet en større andel av plassen */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hjemmeside-hoyre {
+    flex: 1;
+    /* Lar teksten få litt mindre plass relativt til bildet */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Rene fade-in animasjoner uten posisjonsendring */
+.fade-in-bilde,
+.fade-in-tekst,
+.fade-in-lenke {
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+}
+
+.fade-in-bilde {
+    width: 110%;
+    /* Skalerer bildet opp utover standardbredden om nødvendig */
+    max-width: 900px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    transition-delay: 0.3s;
+}
+
+.fade-in-tekst {
+    font-size: 3.5rem;
+    font-family: Calibri, sans-serif;
+    color: var(--hso-mork-bla);
+    margin: 0 0 20px 0;
+    transition-delay: 0.8s;
+}
+
+.fade-in-lenke {
+    font-size: 1.5rem;
+    font-family: Calibri, sans-serif;
+    color: var(--hso-mork-bla);
+    text-decoration: underline;
+    word-break: break-all;
+    transition-delay: 1.2s;
+}
+
+.fade-in-lenke:hover {
+    color: var(--hso-lys-bla);
+}
+
+.slide.is-visible .fade-in-bilde,
+.slide.is-visible .fade-in-tekst,
+.slide.is-visible .fade-in-lenke {
+    opacity: 1;
+}
