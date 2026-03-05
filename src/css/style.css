@@ -467,7 +467,8 @@ h3 {
     width: 100%;
     max-width: 1300px;
     margin: 0 auto;
-    padding: 40px 30px;
+    padding: 10px 30px;
+    /* Redusert padding top/bottom */
     position: relative;
     display: flex;
     flex-direction: column;
@@ -480,7 +481,7 @@ h3 {
     width: 80px;
     height: 2px;
     background-color: rgba(255, 255, 255, 0.5);
-    z-index: 2;
+    z-index: 0;
     transition: all 0.6s ease;
     transform-origin: center center;
     opacity: 1 !important;
@@ -498,7 +499,7 @@ h3 {
 }
 
 .strek-spinner.is-spinning {
-    width: 4px;
+    width: 8px;
     height: 80px;
     animation: strek-spin 0.8s linear infinite;
     background-color: rgba(255, 255, 255, 0.8);
@@ -507,7 +508,7 @@ h3 {
 
 /* Phase 2: when slide 4 is visible, line stops spinning & extends full height */
 .strek-spinner.extend-down {
-    width: 4px;
+    width: 8px;
     height: 140vh;
     animation: none;
     background-color: rgba(255, 255, 255, 0.4);
@@ -520,7 +521,8 @@ h3 {
     width: 100%;
     align-items: flex-end;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    /* Redusert fra 30px */
     position: relative;
     z-index: 1;
     opacity: 0;
@@ -535,7 +537,7 @@ h3 {
 }
 
 .pva-header h2 {
-    font-size: 3rem;
+    font-size: 2.85rem;
     font-family: Calibri, sans-serif;
     color: var(--tekst-lys);
     margin: 0;
@@ -543,7 +545,7 @@ h3 {
 }
 
 .pva-subtittel {
-    font-size: 1.15rem;
+    font-size: 1.09rem;
     color: rgba(255, 255, 255, 0.6);
     margin: 4px 0 0 0;
     font-style: italic;
@@ -555,7 +557,6 @@ h3 {
     flex-shrink: 0;
 }
 
-/* --- Each dimension row --- */
 .pva-rad {
     display: flex;
     width: 100%;
@@ -569,8 +570,8 @@ h3 {
     transition: opacity 0.7s ease-out,
         transform 0.7s ease-out;
     transition-delay: calc(0.6s + var(--rad-index, 0) * 0.15s);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 20px 0;
+    padding: 12px 0;
+    /* Redusert padding (tidligere 20px 0) */
 }
 
 .slide.is-visible .pva-rad {
@@ -581,7 +582,8 @@ h3 {
 /* --- Left / Right panels --- */
 .pva-side {
     flex: 1;
-    padding: 10px 25px;
+    padding: 5px 25px;
+    /* Redusert vertikal padding i sidene */
     color: var(--tekst-lys);
 }
 
@@ -596,7 +598,7 @@ h3 {
 }
 
 .pva-side h3 {
-    font-size: 1.5rem;
+    font-size: 1.42rem;
     font-family: Calibri, sans-serif;
     color: var(--tekst-lys);
     margin: 0 0 6px 0;
@@ -605,7 +607,7 @@ h3 {
 }
 
 .pva-side p {
-    font-size: 1.2rem;
+    font-size: 1.14rem;
     font-family: Calibri, sans-serif;
     line-height: 1.55;
     color: rgba(255, 255, 255, 0.85);
@@ -620,13 +622,13 @@ h3 {
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-family: Calibri, sans-serif;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.12em;
     color: var(--hso-mork-bla);
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 1);
     border-radius: 20px;
     padding: 8px 12px;
     align-self: center;
