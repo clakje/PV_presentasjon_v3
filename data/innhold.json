@@ -47,10 +47,10 @@
         {
             "id": "avslutning",
             "bakgrunnsfarge": "#ffffff",
-            "grafikk_url": "",
+            "grafikk_url": "Diamanten Animasjon med navn.gif",
             "grafikk_posisjon": "center",
             "tekst_tema": "lys",
-            "innhold_html": "<h2>Neste steg</h2><p>Du er nå ferdig med introduksjonen. Nå kan du erstatte denne teksten med ekte faginnhold slide for slide, og putte inn bilder i <code>assets/images/</code> som refereres til i JSON-filen.</p>"
+            "innhold_html": ""
         }
     ]
 }

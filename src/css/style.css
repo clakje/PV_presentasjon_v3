@@ -844,3 +844,12 @@ h3 {
 .slide.is-visible .fade-in-lenke {
     opacity: 1;
 }
+
+/* ============================================================
+   Side 7: Avslutning
+   ============================================================ */
+#avslutning .slide-content {
+    background: transparent !important;
+    box-shadow: none !important;
+    max-width: none !important;
+}
