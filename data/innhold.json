@@ -20,7 +20,7 @@
             "grafikk_url": "",
             "grafikk_posisjon": "",
             "tekst_tema": "mork",
-            "innhold_html": "<div class=\"strek-overgang\"></div><div class=\"layout-sitat\"><div class=\"sitat-dekor-linje\"></div><blockquote class=\"sitat-tekst\">«Den største risikoen er ikke at vi investerer for mye i kompetanse – men at vi investerer for lite.»</blockquote><p class=\"sitat-kilde\">— Kompetanseheving i helsesektoren</p></div><div class=\"spinner-wrapper\" style=\"position: relative; width: 100%; height: 0px; display: flex; justify-content: center; margin-top: -30px; z-index: 10;\"><div class=\"strek-spinner\" id=\"the-spinner\"></div></div>"
+            "innhold_html": "<div class=\"strek-overgang\"></div><div class=\"layout-sitat\"><div class=\"sitat-dekor-linje\"></div><blockquote class=\"sitat-tekst\">«Kjernen i vår virksomhet er kompetansen til medarbeidere og ledere. Arbeidsplassen skal være den primære arenaen for læring og utvikling.»</blockquote><p class=\"sitat-kilde\">- Regional utviklingsplan 2040</p></div><div class=\"spinner-wrapper\" style=\"position: relative; width: 100%; height: 0px; display: flex; justify-content: center; margin-top: -30px; z-index: 10;\"><div class=\"strek-spinner\" id=\"the-spinner\"></div></div>"
         },
         {
             "id": "fordypning",
