@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let slideData = [];
 
-    // 1. Hent innholdet fra innhold.json
-    fetch('data/innhold.json')
+    // 1. Hent innholdet fra innhold.json med cache-busting
+    fetch('data/innhold.json?v=' + new Date().getTime())
         .then(response => response.json())
         .then(data => {
             slideData = data.slides;
@@ -82,19 +82,49 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Oppdater Lag 2: Grafikk
-        // Sjekk om det finnes grafikk for denne sliden
         if (data.grafikk_url) {
-            // Hvis det er et bilde, bytt innholdet i Lag 2
-            layer2.innerHTML = `<img src="assets/images/${data.grafikk_url}" alt="Grafikk">`;
-            layer2.style.opacity = 1;
+            const nySti = `assets/images/${data.grafikk_url}`;
+            const naaBilde = layer2.querySelector('img');
 
-            // Plasser grafikken (venstre, midt, høyre)
-            if (data.grafikk_posisjon === "venstre") {
-                layer2.style.justifyContent = "flex-start";
-            } else if (data.grafikk_posisjon === "hoyre") {
-                layer2.style.justifyContent = "flex-end";
-            } else {
-                layer2.style.justifyContent = "center";
+            if (naaBilde && naaBilde.getAttribute('src') !== nySti) {
+                // Fade ut selve bildet først, ikke hele laget, for en jevnere overgang
+                naaBilde.style.opacity = 0;
+                
+                setTimeout(() => {
+                    layer2.innerHTML = `<img src="${nySti}" alt="Grafikk" style="opacity: 0;">`;
+                    
+                    // Plasser grafikken (venstre, midt, høyre)
+                    if (data.grafikk_posisjon === "venstre") {
+                        layer2.style.justifyContent = "flex-start";
+                    } else if (data.grafikk_posisjon === "hoyre") {
+                        layer2.style.justifyContent = "flex-end";
+                    } else {
+                        layer2.style.justifyContent = "center";
+                    }
+
+                    // Sørg for at laget er synlig hvis det var skjult
+                    layer2.style.opacity = 1;
+
+                    // Fade inn det nye bildet med en liten forsinkelse så nettleseren registrerer opacity: 0 først
+                    setTimeout(() => {
+                        const nyttBilde = layer2.querySelector('img');
+                        if (nyttBilde) nyttBilde.style.opacity = 1;
+                    }, 50);
+                    
+                }, 500); // Matcher CSS transition for #layer-2-graphics img
+            } else if (!naaBilde) {
+                // Ingenting der fra før, legg til og fade inn umiddelbart
+                layer2.innerHTML = `<img src="${nySti}" alt="Grafikk">`;
+                
+                if (data.grafikk_posisjon === "venstre") {
+                    layer2.style.justifyContent = "flex-start";
+                } else if (data.grafikk_posisjon === "hoyre") {
+                    layer2.style.justifyContent = "flex-end";
+                } else {
+                    layer2.style.justifyContent = "center";
+                }
+
+                layer2.style.opacity = 1;
             }
         } else {
             // Fade ut Lag 2 hvis det ikke er noe bilde på denne sliden

@@ -51,6 +51,14 @@
             "grafikk_posisjon": "center",
             "tekst_tema": "lys",
             "innhold_html": ""
+        },
+        {
+            "id": "trappen",
+            "bakgrunnsfarge": "#ffffff",
+            "grafikk_url": "Trappen.png",
+            "grafikk_posisjon": "center",
+            "tekst_tema": "lys",
+            "innhold_html": ""
         }
     ]
 }

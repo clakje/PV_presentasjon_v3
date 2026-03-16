@@ -853,3 +853,19 @@ h3 {
     box-shadow: none !important;
     max-width: none !important;
 }
+
+/* ============================================================
+   Side 8: Trappen
+   ============================================================ */
+#trappen .slide-content {
+    display: none; /* Skjuler den tomme tekstboksen helt */
+}
+
+/* Gjøre grafikken enda 20% større og fjerne skygge når trappen-sliden er aktiv */
+.slide.is-visible#trappen ~ #layer-2-graphics img,
+body:has(#trappen.is-visible) #layer-2-graphics img {
+    max-width: 84vw; /* Økt fra 70vw (+20%) */
+    max-height: 134vh; /* Økt fra 112vh (+20%) */
+    box-shadow: none !important;
+    filter: drop-shadow(0 0 0 transparent) !important;
+}
